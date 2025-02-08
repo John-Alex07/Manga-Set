@@ -36,3 +36,8 @@ Additional Notes:
 
 Include sound effects like "WHOOSH" for the wind and "CLANG" for the metallic noise as Hiro accidentally kicks a chair.
 Focus on dramatic lighting, with the setting sun highlighting their silhouettes.
+
+
+
+Negative Prompt:
+# blurry, low-quality, distorted face, distorted body, extra limbs, distorted textures, weird details and disfigurement, abnormal fingers.
