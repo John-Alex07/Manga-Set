@@ -4,10 +4,37 @@ import streamlit as st
 from diffusers import StableDiffusionPipeline, EulerDiscreteScheduler
 from PIL import Image
 import glob
+import base64
 
 # Set cache directory
 cache_dir = "J:\\Important\\VIT Vellore\\SET PROJECT\\cache"
 torch.classes.__path__ = []  # Fix import issues
+
+# Set background image for Streamlit app
+def set_background(image_path):
+    with open(image_path, "rb") as image_file:
+        encoded_image = base64.b64encode(image_file.read()).decode()
+    st.markdown(
+        f"""
+        <style>
+        .stApp {{
+            background-image: url("data:image/png;base64,{encoded_image}");
+            background-size: cover;
+        }}
+        .stApp * {{
+            text-shadow: 2px 2px 3px black, 0 0 1em black, 0 0 0.2em black;
+            font-family: "Comic Sans MS", cursive, sans-serif;
+            font-size: 18px;
+            font-color: black;
+        }}
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+
+background_image_path = os.path.join("./", "Background.png")
+if os.path.exists(background_image_path):
+    set_background(background_image_path)
 
 def load_model(model_name):
     """Load and cache the selected Stable Diffusion model."""
@@ -91,6 +118,12 @@ if mode == "Character":
             with st.spinner(f"Generating {char_name}... Please wait."):
                 char_image = generate_image(prompt, negative_prompt, guidance_scale, num_inference_steps, char_save_path, model, scene_seed)
             st.session_state.generated_images.append((char_name, char_image))
+    # Display the generated character
+    if st.session_state.generated_images:
+        latest_char_name, latest_char_img = st.session_state.generated_images[-1]
+        st.subheader(f"Latest Generated {latest_char_name}")
+        st.image(latest_char_img, caption=latest_char_name, use_container_width=True)
+        st.image(char_image, caption=char_name, use_container_width=True)
 
 # Background Generation
 elif mode == "Background":
@@ -100,7 +133,11 @@ elif mode == "Background":
         with st.spinner("Generating background... Please wait."):
             bg_image = generate_image(prompt, negative_prompt, guidance_scale, num_inference_steps, background_save_path, model, scene_seed)
         st.session_state.generated_images.append(("Background", bg_image))
-
+    # Display the generated background
+    if st.session_state.generated_images:
+        latest_bg_name, latest_bg_img = st.session_state.generated_images[-1]
+        st.subheader(f"Latest Generated {latest_bg_name}")
+        st.image(latest_bg_img, caption=latest_bg_name, use_container_width=True)
 # Scene Generation (Full Scene)
 elif mode == "Scene":
     scene_save_path = os.path.join(scene_path, "Full_Scene.png")
