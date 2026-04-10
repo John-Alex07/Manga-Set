@@ -1,0 +1,167 @@
+[
+  {
+    "id": "consistency_hiro_panel_1",
+    "prompt": "Manga close-up of Hiro, a 16-year-old boy with messy dark hair, a small cut on his left cheek, school uniform collar open, determined expression, black-and-white screentone shading",
+    "negative_prompt": "different hair color, different scar position, blurry eyes, malformed face",
+    "controls": {
+      "shot_type": "close up",
+      "camera_angle": "eye level"
+    },
+    "metadata": {
+      "suite": "consistency",
+      "character": "Hiro",
+      "character_group": "hiro",
+      "panel_index": 1
+    }
+  },
+  {
+    "id": "consistency_hiro_panel_2",
+    "prompt": "Manga medium shot of Hiro, same messy dark hair and cut on his left cheek, turning toward a sound in a dark corridor, tense posture, dramatic inking and consistent facial identity",
+    "negative_prompt": "new character design, different scar position, extra limbs, blurry face",
+    "controls": {
+      "shot_type": "medium shot",
+      "camera_angle": "over shoulder"
+    },
+    "metadata": {
+      "suite": "consistency",
+      "character": "Hiro",
+      "character_group": "hiro",
+      "panel_index": 2
+    }
+  },
+  {
+    "id": "consistency_hiro_panel_3",
+    "prompt": "Manga action panel of Hiro, same messy dark hair and left-cheek cut, bracing for impact on a rooftop, wind pulling at his school uniform, intense expression, consistent identity across panels",
+    "negative_prompt": "new hairstyle, wrong scar, duplicate character, low detail",
+    "controls": {
+      "shot_type": "action shot",
+      "camera_angle": "low angle"
+    },
+    "metadata": {
+      "suite": "consistency",
+      "character": "Hiro",
+      "character_group": "hiro",
+      "panel_index": 3
+    }
+  },
+  {
+    "id": "consistency_akira_panel_1",
+    "prompt": "Manga close-up of Akira, a tall teenage rival with spiked hair, sharp eyes, leather jacket, confident smirk, staff resting over one shoulder, dramatic black-and-white screentone shading",
+    "negative_prompt": "soft expression, wrong hairstyle, blurry eyes, malformed face",
+    "controls": {
+      "shot_type": "close up",
+      "camera_angle": "eye level"
+    },
+    "metadata": {
+      "suite": "consistency",
+      "character": "Akira",
+      "character_group": "akira",
+      "panel_index": 1
+    }
+  },
+  {
+    "id": "consistency_akira_panel_2",
+    "prompt": "Manga medium shot of Akira, same spiked hair and leather jacket, standing near a rooftop fence at sunset with a wooden staff in hand, confident expression, consistent identity and dramatic inking",
+    "negative_prompt": "different hairstyle, soft smile, missing staff, blurred face",
+    "controls": {
+      "shot_type": "medium shot",
+      "camera_angle": "slightly low angle"
+    },
+    "metadata": {
+      "suite": "consistency",
+      "character": "Akira",
+      "character_group": "akira",
+      "panel_index": 2
+    }
+  },
+  {
+    "id": "consistency_akira_panel_3",
+    "prompt": "Manga action panel of Akira, same spiked hair and leather jacket, swinging his staff in a wide arc on a rooftop, aggressive stance, speed lines, consistent identity from previous panels",
+    "negative_prompt": "wrong hairstyle, missing jacket, gentle expression, blurry, duplicate character",
+    "controls": {
+      "shot_type": "action shot",
+      "camera_angle": "dynamic low angle"
+    },
+    "metadata": {
+      "suite": "consistency",
+      "character": "Akira",
+      "character_group": "akira",
+      "panel_index": 3
+    }
+  },
+  {
+    "id": "consistency_yuki_panel_1",
+    "prompt": "Manga close-up of Yuki, a 17-year-old girl with long straight black hair, round glasses, a small mole under her right eye, wearing a school cardigan, calm analytical expression, black-and-white screentone",
+    "negative_prompt": "wrong hair style, missing glasses, blurry eyes, malformed face, different mole position",
+    "controls": {
+      "shot_type": "close up",
+      "camera_angle": "eye level"
+    },
+    "metadata": {
+      "suite": "consistency",
+      "character": "Yuki",
+      "character_group": "yuki",
+      "panel_index": 1
+    }
+  },
+  {
+    "id": "consistency_yuki_panel_2",
+    "prompt": "Manga medium shot of Yuki, same long straight black hair and round glasses and mole under right eye, sitting at a library desk surrounded by open books, focused expression, clean line art",
+    "negative_prompt": "short hair, missing glasses, wrong mole position, blurry, extra fingers",
+    "controls": {
+      "shot_type": "medium shot",
+      "camera_angle": "slightly above"
+    },
+    "metadata": {
+      "suite": "consistency",
+      "character": "Yuki",
+      "character_group": "yuki",
+      "panel_index": 2
+    }
+  },
+  {
+    "id": "consistency_yuki_panel_3",
+    "prompt": "Manga action panel of Yuki, same long straight black hair and round glasses and mole under right eye, standing up suddenly from her desk, papers scattering, surprised expression, dramatic shadows",
+    "negative_prompt": "wrong hair, missing glasses, calm expression, duplicate character, low detail",
+    "controls": {
+      "shot_type": "medium shot",
+      "camera_angle": "eye level"
+    },
+    "metadata": {
+      "suite": "consistency",
+      "character": "Yuki",
+      "character_group": "yuki",
+      "panel_index": 3
+    }
+  },
+  {
+    "id": "consistency_kenji_panel_1",
+    "prompt": "Manga close-up of Kenji, a stocky teenage boy with a buzz cut, thick eyebrows, a bandage across his nose, wearing a tracksuit jacket, fierce grin, bold black-and-white inking",
+    "negative_prompt": "long hair, thin eyebrows, missing bandage, blurry face, malformed features",
+    "controls": {
+      "shot_type": "close up",
+      "camera_angle": "slightly low angle"
+    },
+    "metadata": {
+      "suite": "consistency",
+      "character": "Kenji",
+      "character_group": "kenji",
+      "panel_index": 1
+    }
+  },
+  {
+    "id": "consistency_kenji_panel_2",
+    "prompt": "Manga medium shot of Kenji, same buzz cut and thick eyebrows and bandaged nose and tracksuit jacket, cracking his knuckles in a gym, confident stance, strong shadows and screentone",
+    "negative_prompt": "wrong hairstyle, missing bandage, gentle expression, blurry, extra limbs",
+    "controls": {
+      "shot_type": "medium shot",
+      "camera_angle": "eye level"
+    },
+    "metadata": {
+      "suite": "consistency",
+      "character": "Kenji",
+      "character_group": "kenji",
+      "panel_index": 2
+    }
+  }
+]

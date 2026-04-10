@@ -1,1 +1,37 @@
+# Virtual environments
 .venv/
+.wsl_venv/
+venv/
+
+# Local model cache
+.models/
+
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+
+# Experiment outputs (large generated images + reports)
+outputs/
+
+# Exports (generated analysis tables)
+exports/
+
+# Generated images from manual runs
+generated_images/
+
+# HuggingFace lock files
+*.lock
+
+agent_team/

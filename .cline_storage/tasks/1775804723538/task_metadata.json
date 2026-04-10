@@ -1,0 +1,11 @@
+{
+  "files_in_context": [],
+  "model_usage": [
+    {
+      "ts": 1775804723556,
+      "model_id": "claude-sonnet-4-5-20250929:1m",
+      "model_provider_id": "anthropic",
+      "mode": "plan"
+    }
+  ]
+}

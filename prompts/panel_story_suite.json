@@ -1,0 +1,86 @@
+[
+  {
+    "id": "story_panel_1_setup",
+    "prompt": "Panel 1 of a manga sequence: a student named Hiro steps onto a windy rooftop at sunset and sees his rival waiting near the fence, wide establishing shot, strong silhouette composition",
+    "negative_prompt": "blurry, crowded scene, unreadable background, low contrast",
+    "controls": {
+      "panel_layout": "establishing panel",
+      "shot_type": "wide shot"
+    },
+    "metadata": {
+      "suite": "story",
+      "story_id": "rooftop_confrontation",
+      "panel_index": 1
+    }
+  },
+  {
+    "id": "story_panel_2_confrontation",
+    "prompt": "Panel 2 of the same manga sequence: Hiro confronts his rival Akira face to face, medium shot with both characters visible, tension emphasized through body language and dramatic shadows",
+    "negative_prompt": "blurred faces, duplicate people, weak lighting, low detail",
+    "controls": {
+      "panel_layout": "confrontation panel",
+      "shot_type": "medium shot"
+    },
+    "metadata": {
+      "suite": "story",
+      "story_id": "rooftop_confrontation",
+      "panel_index": 2
+    }
+  },
+  {
+    "id": "story_panel_3_action",
+    "prompt": "Panel 3 of the same manga sequence: Akira swings a wooden staff and Hiro reacts, dynamic action panel with motion lines, impact emphasis, and preserved character identity from prior panels",
+    "negative_prompt": "static pose, duplicate limbs, inconsistent characters, muddy line art",
+    "controls": {
+      "panel_layout": "action panel",
+      "shot_type": "dynamic close combat"
+    },
+    "metadata": {
+      "suite": "story",
+      "story_id": "rooftop_confrontation",
+      "panel_index": 3
+    }
+  },
+  {
+    "id": "story_cafe_1_arrival",
+    "prompt": "Panel 1 of a manga sequence: Yuki enters a quiet after-school cafe, glass door swinging open, bell ringing above, warm interior with empty seats and a counter in the background, establishing shot",
+    "negative_prompt": "blurry, crowded, dark lighting, malformed architecture",
+    "controls": {
+      "panel_layout": "establishing panel",
+      "shot_type": "medium wide shot"
+    },
+    "metadata": {
+      "suite": "story",
+      "story_id": "cafe_encounter",
+      "panel_index": 1
+    }
+  },
+  {
+    "id": "story_cafe_2_recognition",
+    "prompt": "Panel 2 of the same manga sequence: Yuki spots Kenji already sitting at a corner table reading a sports magazine, her expression shifts to surprise, close-up reaction shot with speed lines",
+    "negative_prompt": "blurry faces, wrong characters, empty room, low detail",
+    "controls": {
+      "panel_layout": "reaction panel",
+      "shot_type": "close-up"
+    },
+    "metadata": {
+      "suite": "story",
+      "story_id": "cafe_encounter",
+      "panel_index": 2
+    }
+  },
+  {
+    "id": "story_cafe_3_conversation",
+    "prompt": "Panel 3 of the same manga sequence: Yuki and Kenji sit across from each other at the cafe table, both holding drinks, awkward dialogue tension, medium two-shot with speech bubble space reserved",
+    "negative_prompt": "duplicate characters, fused bodies, missing table, blurry background",
+    "controls": {
+      "panel_layout": "dialogue panel",
+      "shot_type": "medium two-shot"
+    },
+    "metadata": {
+      "suite": "story",
+      "story_id": "cafe_encounter",
+      "panel_index": 3
+    }
+  }
+]

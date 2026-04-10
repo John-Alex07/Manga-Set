@@ -1,0 +1,100 @@
+[
+  {
+    "id": "align_rooftop_duel",
+    "prompt": "A black-and-white manga panel showing two teenagers facing each other on a windy rooftop at sunset, one holding a wooden staff and the other in a defensive stance, dramatic shadows and strong screentone shading",
+    "negative_prompt": "blurry, low contrast, malformed hands, duplicate limbs",
+    "controls": {
+      "shot_type": "wide shot",
+      "camera_angle": "low angle",
+      "panel_layout": "single dramatic panel"
+    },
+    "metadata": {
+      "suite": "alignment",
+      "skills": ["counting", "character differentiation", "scene composition"]
+    }
+  },
+  {
+    "id": "align_library_dialogue",
+    "prompt": "A manga panel inside a school library with three students around a table, one whispering, one surprised, one taking notes, tall bookshelves in the background, top-right speech bubble reserved space, crisp line art",
+    "negative_prompt": "text artifacts, blurry faces, extra fingers, fused bodies",
+    "controls": {
+      "shot_type": "medium shot",
+      "camera_angle": "eye level",
+      "panel_layout": "dialogue panel"
+    },
+    "metadata": {
+      "suite": "alignment",
+      "skills": ["counting", "layout reservation", "multi-character staging"]
+    }
+  },
+  {
+    "id": "align_alley_chase",
+    "prompt": "A dynamic manga chase scene in a narrow rainy alley, a girl in a hooded jacket sprinting in the foreground and a masked pursuer behind her, puddle reflections, speed lines, cinematic perspective",
+    "negative_prompt": "flat lighting, low detail, duplicate person, disfigured face",
+    "controls": {
+      "shot_type": "tracking shot",
+      "camera_angle": "tilted angle",
+      "panel_layout": "action panel"
+    },
+    "metadata": {
+      "suite": "alignment",
+      "skills": ["motion depiction", "foreground-background separation"]
+    }
+  },
+  {
+    "id": "align_market_crowd",
+    "prompt": "A manga panel of a bustling outdoor market with five distinct vendor stalls, a girl carrying a bag weaving through the crowd, hanging lanterns above, strong perspective lines converging to a vanishing point, detailed screentone shading",
+    "negative_prompt": "empty scene, blurry, fused people, low detail, duplicate faces",
+    "controls": {
+      "shot_type": "wide shot",
+      "camera_angle": "slightly elevated",
+      "panel_layout": "establishing panel"
+    },
+    "metadata": {
+      "suite": "alignment",
+      "skills": ["counting", "crowd composition", "depth perspective"]
+    }
+  },
+  {
+    "id": "align_classroom_reveal",
+    "prompt": "A manga panel of a classroom with a teacher standing at the blackboard pointing at a diagram, four students seated in rows visible from behind, one student turning around with a shocked expression, dramatic diagonal screen tone",
+    "negative_prompt": "blurry, extra limbs, fused bodies, text artifacts, malformed hands",
+    "controls": {
+      "shot_type": "medium wide shot",
+      "camera_angle": "over-the-shoulder from back row",
+      "panel_layout": "reaction panel"
+    },
+    "metadata": {
+      "suite": "alignment",
+      "skills": ["counting", "spatial layout", "expression depiction"]
+    }
+  },
+  {
+    "id": "align_bridge_standoff",
+    "prompt": "A manga panel of two figures standing at opposite ends of a narrow suspension bridge at night, city lights below, one figure in a long coat and the other in athletic wear, strong silhouette contrast, heavy inking",
+    "negative_prompt": "blurry background, malformed anatomy, duplicate characters, flat composition",
+    "controls": {
+      "shot_type": "extreme wide shot",
+      "camera_angle": "side view",
+      "panel_layout": "cinematic panel"
+    },
+    "metadata": {
+      "suite": "alignment",
+      "skills": ["spatial separation", "silhouette composition", "environmental detail"]
+    }
+  },
+  {
+    "id": "align_dojo_training",
+    "prompt": "A manga panel inside a traditional dojo, a sensei demonstrating a kata in the center while three students kneel watching in the foreground, wooden floor reflections, clean line art with minimal screentone",
+    "negative_prompt": "modern clothing, blurry, extra limbs, crowded background, duplicate figures",
+    "controls": {
+      "shot_type": "medium shot",
+      "camera_angle": "low angle from student perspective",
+      "panel_layout": "instructional panel"
+    },
+    "metadata": {
+      "suite": "alignment",
+      "skills": ["counting", "spatial hierarchy", "action clarity"]
+    }
+  }
+]

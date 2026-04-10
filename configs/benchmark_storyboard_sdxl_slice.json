@@ -1,0 +1,56 @@
+{
+  "name": "benchmark_storyboard_sdxl_slice",
+  "description": "Small real benchmark slice for SDXL-class validation before larger ablation runs.",
+  "seed": 900,
+  "output_dir": "outputs",
+  "prompt_sources": [
+    "../prompts/alignment_suite.json",
+    "../prompts/consistency_suite.json",
+    "../prompts/panel_story_suite.json"
+  ],
+  "prompt_filters": {
+    "ids": [
+      "align_rooftop_duel",
+      "consistency_hiro_panel_1",
+      "story_panel_1_setup"
+    ]
+  },
+  "model": {
+    "backend": "diffusers",
+    "model_id": "stabilityai/stable-diffusion-xl-base-1.0",
+    "device": "cpu",
+    "dtype": "float32",
+    "params": {
+      "variant": null,
+      "use_safetensors": true
+    }
+  },
+  "adapters": [
+    {
+      "type": "style_prompt",
+      "enabled": true,
+      "weight": 0.8,
+      "params": {
+        "style_prompt": "black and white manga screentone, cinematic line art"
+      }
+    },
+    {
+      "type": "controlnet",
+      "enabled": true,
+      "weight": 1.0,
+      "params": {
+        "prompt_hint": "readable panel composition, clear silhouette separation",
+        "controls": {
+          "consistency_goal": "panel coherence"
+        }
+      }
+    }
+  ],
+  "evaluation": {
+    "metrics": [
+      "file_integrity",
+      "image_statistics",
+      "latency"
+    ]
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "name": "benchmark_storyboard_sd21_true_lora_single_clip",
+  "description": "Single-prompt cached SD 2.1 run using actual LoRA weights plus CLIP scoring.",
+  "seed": 980,
+  "output_dir": "outputs",
+  "model": {
+    "backend": "diffusers",
+    "model_id": "/tmp/manga-models/sd21-base-precise",
+    "device": "cpu",
+    "dtype": "float32",
+    "params": {
+      "use_safetensors": true,
+      "scheduler": "euler",
+      "local_files_only": false,
+      "disable_safety_checker": true
+    }
+  },
+  "adapters": [
+    {
+      "type": "lora",
+      "enabled": true,
+      "weight": 1.0,
+      "params": {
+        "weights_path": "/tmp/manga-loras/planogram-sd21/pytorch_lora_weights.bin",
+        "adapter_name": "planogram_sd21_lora",
+        "adapter_scale": 0.8
+      }
+    }
+  ],
+  "evaluation": {
+    "metrics": [
+      "file_integrity",
+      "image_statistics",
+      "latency",
+      "clip_text_alignment"
+    ],
+    "params": {
+      "clip_text_alignment": {
+        "model_id": "openai/clip-vit-base-patch32",
+        "device": "cpu",
+        "local_files_only": false
+      }
+    }
+  },
+  "prompts": [
+    {
+      "id": "align_rooftop_duel",
+      "prompt": "A black-and-white manga panel showing two teenagers facing each other on a windy rooftop at sunset, one holding a wooden staff and the other in a defensive stance, dramatic shadows and strong screentone shading",
+      "negative_prompt": "blurry, low contrast, malformed hands, duplicate limbs",
+      "output_name": "align_rooftop_duel_sd21_true_lora_single",
+      "guidance_scale": 6.0,
+      "num_inference_steps": 4,
+      "metadata": {
+        "suite": "alignment",
+        "baseline": "sd21_true_lora_single",
+        "mode": "cached_local_model"
+      }
+    }
+  ]
+}

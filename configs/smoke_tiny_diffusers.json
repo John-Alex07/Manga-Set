@@ -1,0 +1,37 @@
+{
+  "name": "smoke_tiny_diffusers",
+  "description": "Tiny real-backend smoke test for validating the diffusers execution path on CPU.",
+  "seed": 777,
+  "output_dir": "outputs",
+  "model": {
+    "backend": "diffusers",
+    "model_id": "hf-internal-testing/tiny-stable-diffusion-pipe",
+    "device": "cpu",
+    "dtype": "float32",
+    "params": {
+      "use_safetensors": false,
+      "disable_safety_checker": true
+    }
+  },
+  "adapters": [],
+  "evaluation": {
+    "metrics": [
+      "file_integrity",
+      "image_statistics",
+      "latency"
+    ]
+  },
+  "prompts": [
+    {
+      "id": "tiny_smoke_prompt",
+      "prompt": "A simple manga portrait with black and white line art",
+      "negative_prompt": "blurry, low quality",
+      "output_name": "tiny_smoke_prompt",
+      "guidance_scale": 5.0,
+      "num_inference_steps": 2,
+      "metadata": {
+        "purpose": "diffusers_smoke_test"
+      }
+    }
+  ]
+}

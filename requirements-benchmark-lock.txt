@@ -1,0 +1,19 @@
+# Exact dependency versions used for the reported experiments.
+# Generated from the WSL Ubuntu venv used for the expanded ablation study.
+# Install with: pip install -r requirements-benchmark-lock.txt
+#
+# Note: torch/torchvision versions shown are CPU-only builds.
+# For GPU execution, install the appropriate CUDA variant from https://pytorch.org
+accelerate==1.13.0
+diffusers==0.37.1
+huggingface_hub==1.9.2
+lpips==0.1.4
+numpy==2.4.3
+opencv-python-headless==4.13.0.92
+peft==0.18.1
+pillow==12.1.1
+safetensors==0.7.0
+scipy==1.17.1
+torch==2.11.0+cpu
+torchvision==0.26.0+cpu
+transformers==5.5.0

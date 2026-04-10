@@ -1,0 +1,117 @@
+{
+  "name": "benchmark_storyboard_sd21_true_lora_cartoon_quintet_clip",
+  "description": "Five-prompt cached SD 2.1 run using a second public LoRA weights set plus CLIP scoring.",
+  "seed": 42,
+  "output_dir": "outputs",
+  "model": {
+    "backend": "diffusers",
+    "model_id": "/tmp/manga-models/sd21-base-precise",
+    "device": "cpu",
+    "dtype": "float32",
+    "params": {
+      "use_safetensors": true,
+      "scheduler": "euler",
+      "local_files_only": false,
+      "disable_safety_checker": true
+    }
+  },
+  "adapters": [
+    {
+      "type": "lora",
+      "enabled": true,
+      "weight": 1.0,
+      "params": {
+        "weights_path": "/tmp/manga-loras/cartoon-sd21/checkpoint-10000/pytorch_lora_weights.safetensors",
+        "adapter_name": "cartoon_sd21_lora",
+        "adapter_scale": 0.8
+      }
+    }
+  ],
+  "evaluation": {
+    "metrics": [
+      "file_integrity",
+      "image_statistics",
+      "latency",
+      "clip_text_alignment"
+    ],
+    "params": {
+      "clip_text_alignment": {
+        "model_id": "openai/clip-vit-base-patch32",
+        "device": "cpu",
+        "local_files_only": false
+      }
+    }
+  },
+  "prompts": [
+    {
+      "id": "align_rooftop_duel",
+      "seed": 1001,
+      "prompt": "A black-and-white manga panel showing two teenagers facing each other on a windy rooftop at sunset, one holding a wooden staff and the other in a defensive stance, dramatic shadows and strong screentone shading",
+      "negative_prompt": "blurry, low contrast, malformed hands, duplicate limbs",
+      "output_name": "align_rooftop_duel_sd21_true_lora_cartoon_quintet",
+      "guidance_scale": 6.0,
+      "num_inference_steps": 4,
+      "metadata": {
+        "suite": "alignment",
+        "baseline": "sd21_true_lora_cartoon_quintet",
+        "mode": "cached_local_model"
+      }
+    },
+    {
+      "id": "align_library_dialogue",
+      "seed": 1002,
+      "prompt": "A manga panel inside a school library with three students around a table, one whispering, one surprised, one taking notes, tall bookshelves in the background, top-right speech bubble reserved space, crisp line art",
+      "negative_prompt": "text artifacts, blurry faces, extra fingers, fused bodies",
+      "output_name": "align_library_dialogue_sd21_true_lora_cartoon_quintet",
+      "guidance_scale": 6.0,
+      "num_inference_steps": 4,
+      "metadata": {
+        "suite": "alignment",
+        "baseline": "sd21_true_lora_cartoon_quintet",
+        "mode": "cached_local_model"
+      }
+    },
+    {
+      "id": "consistency_hiro_panel_1",
+      "seed": 1003,
+      "prompt": "Manga close-up of Hiro, a 16-year-old boy with messy dark hair, a small cut on his left cheek, school uniform collar open, determined expression, black-and-white screentone shading",
+      "negative_prompt": "different hair color, different scar position, blurry eyes, malformed face",
+      "output_name": "consistency_hiro_panel_1_sd21_true_lora_cartoon_quintet",
+      "guidance_scale": 6.0,
+      "num_inference_steps": 4,
+      "metadata": {
+        "suite": "consistency",
+        "baseline": "sd21_true_lora_cartoon_quintet",
+        "mode": "cached_local_model"
+      }
+    },
+    {
+      "id": "consistency_hiro_panel_2",
+      "seed": 1004,
+      "prompt": "Manga medium shot of Hiro, same messy dark hair and cut on his left cheek, turning toward a sound in a dark corridor, tense posture, dramatic inking and consistent facial identity",
+      "negative_prompt": "new character design, different scar position, extra limbs, blurry face",
+      "output_name": "consistency_hiro_panel_2_sd21_true_lora_cartoon_quintet",
+      "guidance_scale": 6.0,
+      "num_inference_steps": 4,
+      "metadata": {
+        "suite": "consistency",
+        "baseline": "sd21_true_lora_cartoon_quintet",
+        "mode": "cached_local_model"
+      }
+    },
+    {
+      "id": "story_panel_1_setup",
+      "seed": 1005,
+      "prompt": "Panel 1 of a manga sequence: a student named Hiro steps onto a windy rooftop at sunset and sees his rival waiting near the fence, wide establishing shot, strong silhouette composition",
+      "negative_prompt": "blurry, crowded scene, unreadable background, low contrast",
+      "output_name": "story_panel_1_setup_sd21_true_lora_cartoon_quintet",
+      "guidance_scale": 6.0,
+      "num_inference_steps": 4,
+      "metadata": {
+        "suite": "story",
+        "baseline": "sd21_true_lora_cartoon_quintet",
+        "mode": "cached_local_model"
+      }
+    }
+  ]
+}

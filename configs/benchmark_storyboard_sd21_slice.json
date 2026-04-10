@@ -1,0 +1,70 @@
+{
+  "name": "benchmark_storyboard_sd21_slice",
+  "description": "Practical real baseline slice using Stable Diffusion 2.1 on CPU before heavier SDXL-class experiments.",
+  "seed": 910,
+  "output_dir": "outputs",
+  "prompt_sources": [
+    "../prompts/alignment_suite.json",
+    "../prompts/consistency_suite.json",
+    "../prompts/panel_story_suite.json"
+  ],
+  "prompt_filters": {
+    "ids": [
+      "align_rooftop_duel",
+      "consistency_hiro_panel_1"
+    ]
+  },
+  "model": {
+    "backend": "diffusers",
+    "model_id": "sd-research/stable-diffusion-2-1-base",
+    "device": "cpu",
+    "dtype": "float32",
+    "params": {
+      "use_safetensors": true,
+      "scheduler": "euler"
+    }
+  },
+  "adapters": [
+    {
+      "type": "style_prompt",
+      "enabled": true,
+      "weight": 0.8,
+      "params": {
+        "style_prompt": "black and white manga screentone, cinematic line art"
+      }
+    }
+  ],
+  "evaluation": {
+    "metrics": [
+      "file_integrity",
+      "image_statistics",
+      "latency"
+    ]
+  },
+  "prompts": [
+    {
+      "id": "align_rooftop_duel",
+      "prompt": "A black-and-white manga panel showing two teenagers facing each other on a windy rooftop at sunset, one holding a wooden staff and the other in a defensive stance, dramatic shadows and strong screentone shading",
+      "negative_prompt": "blurry, low contrast, malformed hands, duplicate limbs",
+      "output_name": "align_rooftop_duel_sd21",
+      "guidance_scale": 6.5,
+      "num_inference_steps": 8,
+      "metadata": {
+        "suite": "alignment",
+        "baseline": "sd21_cpu_slice"
+      }
+    },
+    {
+      "id": "consistency_hiro_panel_1",
+      "prompt": "Manga close-up of Hiro, a 16-year-old boy with messy dark hair, a small cut on his left cheek, school uniform collar open, determined expression, black-and-white screentone shading",
+      "negative_prompt": "different hair color, different scar position, blurry eyes, malformed face",
+      "output_name": "consistency_hiro_panel_1_sd21",
+      "guidance_scale": 6.5,
+      "num_inference_steps": 8,
+      "metadata": {
+        "suite": "consistency",
+        "baseline": "sd21_cpu_slice"
+      }
+    }
+  ]
+}

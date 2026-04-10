@@ -1,0 +1,653 @@
+{
+  "name": "sdxl_style_prompt_t1",
+  "description": "SDXL Turbo ablation: SDXL Turbo + Style Prompt, trial 1 (seed offset 137).",
+  "seed": 137,
+  "output_dir": "outputs",
+  "model": {
+    "backend": "diffusers",
+    "model_id": "stabilityai/sdxl-turbo",
+    "device": "cpu",
+    "dtype": "float32",
+    "revision": "71153311d3dbb46851df1931d3ca6e939de83304",
+    "params": {
+      "use_safetensors": true,
+      "scheduler": "euler_ancestral",
+      "local_files_only": false,
+      "disable_safety_checker": true
+    }
+  },
+  "adapters": [
+    {
+      "type": "style_prompt",
+      "enabled": true,
+      "weight": 0.8,
+      "params": {
+        "style_prompt": "black and white manga screentone, cinematic line art"
+      }
+    }
+  ],
+  "evaluation": {
+    "metrics": [
+      "file_integrity",
+      "image_statistics",
+      "latency",
+      "clip_text_alignment",
+      "lpips_consistency",
+      "dino_similarity"
+    ],
+    "params": {
+      "clip_text_alignment": {
+        "model_id": "openai/clip-vit-base-patch32",
+        "revision": "3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268",
+        "device": "cpu",
+        "local_files_only": false
+      },
+      "lpips_consistency": {
+        "device": "cpu"
+      },
+      "dino_similarity": {
+        "model_id": "facebook/dino-vits16",
+        "revision": "abe3b354cb6a9b6f146096b14a4a9d7eecbcb4bd",
+        "device": "cpu",
+        "local_files_only": false
+      }
+    }
+  },
+  "prompts": [
+    {
+      "id": "align_rooftop_duel",
+      "seed": 1138,
+      "prompt": "A black-and-white manga panel showing two teenagers facing each other on a windy rooftop at sunset, one holding a wooden staff and the other in a defensive stance, dramatic shadows and strong screentone shading",
+      "negative_prompt": "blurry, low contrast, malformed hands, duplicate limbs",
+      "output_name": "align_rooftop_duel_style_prompt_sdxl_t1",
+      "guidance_scale": 0.0,
+      "num_inference_steps": 4,
+      "metadata": {
+        "suite": "alignment",
+        "skills": [
+          "counting",
+          "character differentiation",
+          "scene composition"
+        ],
+        "condition": "style_prompt",
+        "trial_index": 1,
+        "trial_seed": 137,
+        "backbone": "sdxl_turbo",
+        "mode": "cached_local_model"
+      }
+    },
+    {
+      "id": "align_library_dialogue",
+      "seed": 1139,
+      "prompt": "A manga panel inside a school library with three students around a table, one whispering, one surprised, one taking notes, tall bookshelves in the background, top-right speech bubble reserved space, crisp line art",
+      "negative_prompt": "text artifacts, blurry faces, extra fingers, fused bodies",
+      "output_name": "align_library_dialogue_style_prompt_sdxl_t1",
+      "guidance_scale": 0.0,
+      "num_inference_steps": 4,
+      "metadata": {
+        "suite": "alignment",
+        "skills": [
+          "counting",
+          "layout reservation",
+          "multi-character staging"
+        ],
+        "condition": "style_prompt",
+        "trial_index": 1,
+        "trial_seed": 137,
+        "backbone": "sdxl_turbo",
+        "mode": "cached_local_model"
+      }
+    },
+    {
+      "id": "align_alley_chase",
+      "seed": 1140,
+      "prompt": "A dynamic manga chase scene in a narrow rainy alley, a girl in a hooded jacket sprinting in the foreground and a masked pursuer behind her, puddle reflections, speed lines, cinematic perspective",
+      "negative_prompt": "flat lighting, low detail, duplicate person, disfigured face",
+      "output_name": "align_alley_chase_style_prompt_sdxl_t1",
+      "guidance_scale": 0.0,
+      "num_inference_steps": 4,
+      "metadata": {
+        "suite": "alignment",
+        "skills": [
+          "motion depiction",
+          "foreground-background separation"
+        ],
+        "condition": "style_prompt",
+        "trial_index": 1,
+        "trial_seed": 137,
+        "backbone": "sdxl_turbo",
+        "mode": "cached_local_model"
+      }
+    },
+    {
+      "id": "align_market_crowd",
+      "seed": 1141,
+      "prompt": "A manga panel of a bustling outdoor market with five distinct vendor stalls, a girl carrying a bag weaving through the crowd, hanging lanterns above, strong perspective lines converging to a vanishing point, detailed screentone shading",
+      "negative_prompt": "empty scene, blurry, fused people, low detail, duplicate faces",
+      "output_name": "align_market_crowd_style_prompt_sdxl_t1",
+      "guidance_scale": 0.0,
+      "num_inference_steps": 4,
+      "metadata": {
+        "suite": "alignment",
+        "skills": [
+          "counting",
+          "crowd composition",
+          "depth perspective"
+        ],
+        "condition": "style_prompt",
+        "trial_index": 1,
+        "trial_seed": 137,
+        "backbone": "sdxl_turbo",
+        "mode": "cached_local_model"
+      }
+    },
+    {
+      "id": "align_classroom_reveal",
+      "seed": 1142,
+      "prompt": "A manga panel of a classroom with a teacher standing at the blackboard pointing at a diagram, four students seated in rows visible from behind, one student turning around with a shocked expression, dramatic diagonal screen tone",
+      "negative_prompt": "blurry, extra limbs, fused bodies, text artifacts, malformed hands",
+      "output_name": "align_classroom_reveal_style_prompt_sdxl_t1",
+      "guidance_scale": 0.0,
+      "num_inference_steps": 4,
+      "metadata": {
+        "suite": "alignment",
+        "skills": [
+          "counting",
+          "spatial layout",
+          "expression depiction"
+        ],
+        "condition": "style_prompt",
+        "trial_index": 1,
+        "trial_seed": 137,
+        "backbone": "sdxl_turbo",
+        "mode": "cached_local_model"
+      }
+    },
+    {
+      "id": "align_bridge_standoff",
+      "seed": 1143,
+      "prompt": "A manga panel of two figures standing at opposite ends of a narrow suspension bridge at night, city lights below, one figure in a long coat and the other in athletic wear, strong silhouette contrast, heavy inking",
+      "negative_prompt": "blurry background, malformed anatomy, duplicate characters, flat composition",
+      "output_name": "align_bridge_standoff_style_prompt_sdxl_t1",
+      "guidance_scale": 0.0,
+      "num_inference_steps": 4,
+      "metadata": {
+        "suite": "alignment",
+        "skills": [
+          "spatial separation",
+          "silhouette composition",
+          "environmental detail"
+        ],
+        "condition": "style_prompt",
+        "trial_index": 1,
+        "trial_seed": 137,
+        "backbone": "sdxl_turbo",
+        "mode": "cached_local_model"
+      }
+    },
+    {
+      "id": "align_dojo_training",
+      "seed": 1144,
+      "prompt": "A manga panel inside a traditional dojo, a sensei demonstrating a kata in the center while three students kneel watching in the foreground, wooden floor reflections, clean line art with minimal screentone",
+      "negative_prompt": "modern clothing, blurry, extra limbs, crowded background, duplicate figures",
+      "output_name": "align_dojo_training_style_prompt_sdxl_t1",
+      "guidance_scale": 0.0,
+      "num_inference_steps": 4,
+      "metadata": {
+        "suite": "alignment",
+        "skills": [
+          "counting",
+          "spatial hierarchy",
+          "action clarity"
+        ],
+        "condition": "style_prompt",
+        "trial_index": 1,
+        "trial_seed": 137,
+        "backbone": "sdxl_turbo",
+        "mode": "cached_local_model"
+      }
+    },
+    {
+      "id": "consistency_hiro_panel_1",
+      "seed": 1238,
+      "prompt": "Manga close-up of Hiro, a 16-year-old boy with messy dark hair, a small cut on his left cheek, school uniform collar open, determined expression, black-and-white screentone shading",
+      "negative_prompt": "different hair color, different scar position, blurry eyes, malformed face",
+      "output_name": "consistency_hiro_panel_1_style_prompt_sdxl_t1",
+      "guidance_scale": 0.0,
+      "num_inference_steps": 4,
+      "metadata": {
+        "suite": "consistency",
+        "character": "Hiro",
+        "character_group": "hiro",
+        "panel_index": 1,
+        "condition": "style_prompt",
+        "trial_index": 1,
+        "trial_seed": 137,
+        "backbone": "sdxl_turbo",
+        "mode": "cached_local_model"
+      }
+    },
+    {
+      "id": "consistency_hiro_panel_2",
+      "seed": 1239,
+      "prompt": "Manga medium shot of Hiro, same messy dark hair and cut on his left cheek, turning toward a sound in a dark corridor, tense posture, dramatic inking and consistent facial identity",
+      "negative_prompt": "new character design, different scar position, extra limbs, blurry face",
+      "output_name": "consistency_hiro_panel_2_style_prompt_sdxl_t1",
+      "guidance_scale": 0.0,
+      "num_inference_steps": 4,
+      "metadata": {
+        "suite": "consistency",
+        "character": "Hiro",
+        "character_group": "hiro",
+        "panel_index": 2,
+        "condition": "style_prompt",
+        "trial_index": 1,
+        "trial_seed": 137,
+        "backbone": "sdxl_turbo",
+        "mode": "cached_local_model"
+      }
+    },
+    {
+      "id": "consistency_hiro_panel_3",
+      "seed": 1240,
+      "prompt": "Manga action panel of Hiro, same messy dark hair and left-cheek cut, bracing for impact on a rooftop, wind pulling at his school uniform, intense expression, consistent identity across panels",
+      "negative_prompt": "new hairstyle, wrong scar, duplicate character, low detail",
+      "output_name": "consistency_hiro_panel_3_style_prompt_sdxl_t1",
+      "guidance_scale": 0.0,
+      "num_inference_steps": 4,
+      "metadata": {
+        "suite": "consistency",
+        "character": "Hiro",
+        "character_group": "hiro",
+        "panel_index": 3,
+        "condition": "style_prompt",
+        "trial_index": 1,
+        "trial_seed": 137,
+        "backbone": "sdxl_turbo",
+        "mode": "cached_local_model"
+      }
+    },
+    {
+      "id": "consistency_akira_panel_1",
+      "seed": 1241,
+      "prompt": "Manga close-up of Akira, a tall teenage rival with spiked hair, sharp eyes, leather jacket, confident smirk, staff resting over one shoulder, dramatic black-and-white screentone shading",
+      "negative_prompt": "soft expression, wrong hairstyle, blurry eyes, malformed face",
+      "output_name": "consistency_akira_panel_1_style_prompt_sdxl_t1",
+      "guidance_scale": 0.0,
+      "num_inference_steps": 4,
+      "metadata": {
+        "suite": "consistency",
+        "character": "Akira",
+        "character_group": "akira",
+        "panel_index": 1,
+        "condition": "style_prompt",
+        "trial_index": 1,
+        "trial_seed": 137,
+        "backbone": "sdxl_turbo",
+        "mode": "cached_local_model"
+      }
+    },
+    {
+      "id": "consistency_akira_panel_2",
+      "seed": 1242,
+      "prompt": "Manga medium shot of Akira, same spiked hair and leather jacket, standing near a rooftop fence at sunset with a wooden staff in hand, confident expression, consistent identity and dramatic inking",
+      "negative_prompt": "different hairstyle, soft smile, missing staff, blurred face",
+      "output_name": "consistency_akira_panel_2_style_prompt_sdxl_t1",
+      "guidance_scale": 0.0,
+      "num_inference_steps": 4,
+      "metadata": {
+        "suite": "consistency",
+        "character": "Akira",
+        "character_group": "akira",
+        "panel_index": 2,
+        "condition": "style_prompt",
+        "trial_index": 1,
+        "trial_seed": 137,
+        "backbone": "sdxl_turbo",
+        "mode": "cached_local_model"
+      }
+    },
+    {
+      "id": "consistency_akira_panel_3",
+      "seed": 1243,
+      "prompt": "Manga action panel of Akira, same spiked hair and leather jacket, swinging his staff in a wide arc on a rooftop, aggressive stance, speed lines, consistent identity from previous panels",
+      "negative_prompt": "wrong hairstyle, missing jacket, gentle expression, blurry, duplicate character",
+      "output_name": "consistency_akira_panel_3_style_prompt_sdxl_t1",
+      "guidance_scale": 0.0,
+      "num_inference_steps": 4,
+      "metadata": {
+        "suite": "consistency",
+        "character": "Akira",
+        "character_group": "akira",
+        "panel_index": 3,
+        "condition": "style_prompt",
+        "trial_index": 1,
+        "trial_seed": 137,
+        "backbone": "sdxl_turbo",
+        "mode": "cached_local_model"
+      }
+    },
+    {
+      "id": "consistency_yuki_panel_1",
+      "seed": 1244,
+      "prompt": "Manga close-up of Yuki, a 17-year-old girl with long straight black hair, round glasses, a small mole under her right eye, wearing a school cardigan, calm analytical expression, black-and-white screentone",
+      "negative_prompt": "wrong hair style, missing glasses, blurry eyes, malformed face, different mole position",
+      "output_name": "consistency_yuki_panel_1_style_prompt_sdxl_t1",
+      "guidance_scale": 0.0,
+      "num_inference_steps": 4,
+      "metadata": {
+        "suite": "consistency",
+        "character": "Yuki",
+        "character_group": "yuki",
+        "panel_index": 1,
+        "condition": "style_prompt",
+        "trial_index": 1,
+        "trial_seed": 137,
+        "backbone": "sdxl_turbo",
+        "mode": "cached_local_model"
+      }
+    },
+    {
+      "id": "consistency_yuki_panel_2",
+      "seed": 1245,
+      "prompt": "Manga medium shot of Yuki, same long straight black hair and round glasses and mole under right eye, sitting at a library desk surrounded by open books, focused expression, clean line art",
+      "negative_prompt": "short hair, missing glasses, wrong mole position, blurry, extra fingers",
+      "output_name": "consistency_yuki_panel_2_style_prompt_sdxl_t1",
+      "guidance_scale": 0.0,
+      "num_inference_steps": 4,
+      "metadata": {
+        "suite": "consistency",
+        "character": "Yuki",
+        "character_group": "yuki",
+        "panel_index": 2,
+        "condition": "style_prompt",
+        "trial_index": 1,
+        "trial_seed": 137,
+        "backbone": "sdxl_turbo",
+        "mode": "cached_local_model"
+      }
+    },
+    {
+      "id": "consistency_yuki_panel_3",
+      "seed": 1246,
+      "prompt": "Manga action panel of Yuki, same long straight black hair and round glasses and mole under right eye, standing up suddenly from her desk, papers scattering, surprised expression, dramatic shadows",
+      "negative_prompt": "wrong hair, missing glasses, calm expression, duplicate character, low detail",
+      "output_name": "consistency_yuki_panel_3_style_prompt_sdxl_t1",
+      "guidance_scale": 0.0,
+      "num_inference_steps": 4,
+      "metadata": {
+        "suite": "consistency",
+        "character": "Yuki",
+        "character_group": "yuki",
+        "panel_index": 3,
+        "condition": "style_prompt",
+        "trial_index": 1,
+        "trial_seed": 137,
+        "backbone": "sdxl_turbo",
+        "mode": "cached_local_model"
+      }
+    },
+    {
+      "id": "consistency_kenji_panel_1",
+      "seed": 1247,
+      "prompt": "Manga close-up of Kenji, a stocky teenage boy with a buzz cut, thick eyebrows, a bandage across his nose, wearing a tracksuit jacket, fierce grin, bold black-and-white inking",
+      "negative_prompt": "long hair, thin eyebrows, missing bandage, blurry face, malformed features",
+      "output_name": "consistency_kenji_panel_1_style_prompt_sdxl_t1",
+      "guidance_scale": 0.0,
+      "num_inference_steps": 4,
+      "metadata": {
+        "suite": "consistency",
+        "character": "Kenji",
+        "character_group": "kenji",
+        "panel_index": 1,
+        "condition": "style_prompt",
+        "trial_index": 1,
+        "trial_seed": 137,
+        "backbone": "sdxl_turbo",
+        "mode": "cached_local_model"
+      }
+    },
+    {
+      "id": "consistency_kenji_panel_2",
+      "seed": 1248,
+      "prompt": "Manga medium shot of Kenji, same buzz cut and thick eyebrows and bandaged nose and tracksuit jacket, cracking his knuckles in a gym, confident stance, strong shadows and screentone",
+      "negative_prompt": "wrong hairstyle, missing bandage, gentle expression, blurry, extra limbs",
+      "output_name": "consistency_kenji_panel_2_style_prompt_sdxl_t1",
+      "guidance_scale": 0.0,
+      "num_inference_steps": 4,
+      "metadata": {
+        "suite": "consistency",
+        "character": "Kenji",
+        "character_group": "kenji",
+        "panel_index": 2,
+        "condition": "style_prompt",
+        "trial_index": 1,
+        "trial_seed": 137,
+        "backbone": "sdxl_turbo",
+        "mode": "cached_local_model"
+      }
+    },
+    {
+      "id": "story_panel_1_setup",
+      "seed": 1338,
+      "prompt": "Panel 1 of a manga sequence: a student named Hiro steps onto a windy rooftop at sunset and sees his rival waiting near the fence, wide establishing shot, strong silhouette composition",
+      "negative_prompt": "blurry, crowded scene, unreadable background, low contrast",
+      "output_name": "story_panel_1_setup_style_prompt_sdxl_t1",
+      "guidance_scale": 0.0,
+      "num_inference_steps": 4,
+      "metadata": {
+        "suite": "story",
+        "story_id": "rooftop_confrontation",
+        "panel_index": 1,
+        "condition": "style_prompt",
+        "trial_index": 1,
+        "trial_seed": 137,
+        "backbone": "sdxl_turbo",
+        "mode": "cached_local_model"
+      }
+    },
+    {
+      "id": "story_panel_2_confrontation",
+      "seed": 1339,
+      "prompt": "Panel 2 of the same manga sequence: Hiro confronts his rival Akira face to face, medium shot with both characters visible, tension emphasized through body language and dramatic shadows",
+      "negative_prompt": "blurred faces, duplicate people, weak lighting, low detail",
+      "output_name": "story_panel_2_confrontation_style_prompt_sdxl_t1",
+      "guidance_scale": 0.0,
+      "num_inference_steps": 4,
+      "metadata": {
+        "suite": "story",
+        "story_id": "rooftop_confrontation",
+        "panel_index": 2,
+        "condition": "style_prompt",
+        "trial_index": 1,
+        "trial_seed": 137,
+        "backbone": "sdxl_turbo",
+        "mode": "cached_local_model"
+      }
+    },
+    {
+      "id": "story_panel_3_action",
+      "seed": 1340,
+      "prompt": "Panel 3 of the same manga sequence: Akira swings a wooden staff and Hiro reacts, dynamic action panel with motion lines, impact emphasis, and preserved character identity from prior panels",
+      "negative_prompt": "static pose, duplicate limbs, inconsistent characters, muddy line art",
+      "output_name": "story_panel_3_action_style_prompt_sdxl_t1",
+      "guidance_scale": 0.0,
+      "num_inference_steps": 4,
+      "metadata": {
+        "suite": "story",
+        "story_id": "rooftop_confrontation",
+        "panel_index": 3,
+        "condition": "style_prompt",
+        "trial_index": 1,
+        "trial_seed": 137,
+        "backbone": "sdxl_turbo",
+        "mode": "cached_local_model"
+      }
+    },
+    {
+      "id": "story_cafe_1_arrival",
+      "seed": 1341,
+      "prompt": "Panel 1 of a manga sequence: Yuki enters a quiet after-school cafe, glass door swinging open, bell ringing above, warm interior with empty seats and a counter in the background, establishing shot",
+      "negative_prompt": "blurry, crowded, dark lighting, malformed architecture",
+      "output_name": "story_cafe_1_arrival_style_prompt_sdxl_t1",
+      "guidance_scale": 0.0,
+      "num_inference_steps": 4,
+      "metadata": {
+        "suite": "story",
+        "story_id": "cafe_encounter",
+        "panel_index": 1,
+        "condition": "style_prompt",
+        "trial_index": 1,
+        "trial_seed": 137,
+        "backbone": "sdxl_turbo",
+        "mode": "cached_local_model"
+      }
+    },
+    {
+      "id": "story_cafe_2_recognition",
+      "seed": 1342,
+      "prompt": "Panel 2 of the same manga sequence: Yuki spots Kenji already sitting at a corner table reading a sports magazine, her expression shifts to surprise, close-up reaction shot with speed lines",
+      "negative_prompt": "blurry faces, wrong characters, empty room, low detail",
+      "output_name": "story_cafe_2_recognition_style_prompt_sdxl_t1",
+      "guidance_scale": 0.0,
+      "num_inference_steps": 4,
+      "metadata": {
+        "suite": "story",
+        "story_id": "cafe_encounter",
+        "panel_index": 2,
+        "condition": "style_prompt",
+        "trial_index": 1,
+        "trial_seed": 137,
+        "backbone": "sdxl_turbo",
+        "mode": "cached_local_model"
+      }
+    },
+    {
+      "id": "story_cafe_3_conversation",
+      "seed": 1343,
+      "prompt": "Panel 3 of the same manga sequence: Yuki and Kenji sit across from each other at the cafe table, both holding drinks, awkward dialogue tension, medium two-shot with speech bubble space reserved",
+      "negative_prompt": "duplicate characters, fused bodies, missing table, blurry background",
+      "output_name": "story_cafe_3_conversation_style_prompt_sdxl_t1",
+      "guidance_scale": 0.0,
+      "num_inference_steps": 4,
+      "metadata": {
+        "suite": "story",
+        "story_id": "cafe_encounter",
+        "panel_index": 3,
+        "condition": "style_prompt",
+        "trial_index": 1,
+        "trial_seed": 137,
+        "backbone": "sdxl_turbo",
+        "mode": "cached_local_model"
+      }
+    },
+    {
+      "id": "style_screentone_gradient",
+      "seed": 1438,
+      "prompt": "A black-and-white manga panel of a lone figure standing on a hilltop, heavy screentone gradient from dark foreground to light sky, no color, clean inking, classic manga shading technique",
+      "negative_prompt": "color, photorealistic, blurry, watercolor, oil painting, 3D render",
+      "output_name": "style_screentone_gradient_style_prompt_sdxl_t1",
+      "guidance_scale": 0.0,
+      "num_inference_steps": 4,
+      "metadata": {
+        "suite": "style_fidelity",
+        "style_target": "screentone_gradient",
+        "condition": "style_prompt",
+        "trial_index": 1,
+        "trial_seed": 137,
+        "backbone": "sdxl_turbo",
+        "mode": "cached_local_model"
+      }
+    },
+    {
+      "id": "style_speed_lines",
+      "seed": 1439,
+      "prompt": "A manga action panel with a character punching forward, radiating speed lines emanating from the impact point, high contrast black and white, bold inking, no screentone, pure line art action",
+      "negative_prompt": "color, soft shading, photorealistic, blurry, watercolor, 3D render",
+      "output_name": "style_speed_lines_style_prompt_sdxl_t1",
+      "guidance_scale": 0.0,
+      "num_inference_steps": 4,
+      "metadata": {
+        "suite": "style_fidelity",
+        "style_target": "speed_lines",
+        "condition": "style_prompt",
+        "trial_index": 1,
+        "trial_seed": 137,
+        "backbone": "sdxl_turbo",
+        "mode": "cached_local_model"
+      }
+    },
+    {
+      "id": "style_chibi_emotion",
+      "seed": 1440,
+      "prompt": "A manga panel in chibi style showing a small character with oversized head, simplified body, exaggerated angry expression with cross-shaped vein mark, black-and-white line art, comedic tone",
+      "negative_prompt": "realistic proportions, color, photorealistic, detailed anatomy, 3D render",
+      "output_name": "style_chibi_emotion_style_prompt_sdxl_t1",
+      "guidance_scale": 0.0,
+      "num_inference_steps": 4,
+      "metadata": {
+        "suite": "style_fidelity",
+        "style_target": "chibi_expression",
+        "condition": "style_prompt",
+        "trial_index": 1,
+        "trial_seed": 137,
+        "backbone": "sdxl_turbo",
+        "mode": "cached_local_model"
+      }
+    },
+    {
+      "id": "style_dramatic_shadow",
+      "seed": 1441,
+      "prompt": "A noir-style manga panel of a detective in a trench coat standing under a single streetlight, heavy black shadows covering half the face, stark contrast, minimal screentone, heavy inking style",
+      "negative_prompt": "color, bright lighting, flat shading, photorealistic, soft edges, 3D render",
+      "output_name": "style_dramatic_shadow_style_prompt_sdxl_t1",
+      "guidance_scale": 0.0,
+      "num_inference_steps": 4,
+      "metadata": {
+        "suite": "style_fidelity",
+        "style_target": "noir_shadow",
+        "condition": "style_prompt",
+        "trial_index": 1,
+        "trial_seed": 137,
+        "backbone": "sdxl_turbo",
+        "mode": "cached_local_model"
+      }
+    },
+    {
+      "id": "style_shoujo_sparkle",
+      "seed": 1442,
+      "prompt": "A shoujo manga panel of a girl looking up at cherry blossom petals falling, soft flowing hair, large expressive eyes with highlight reflections, delicate thin line art, floral screentone pattern in background",
+      "negative_prompt": "color, heavy inking, masculine style, photorealistic, 3D render, harsh shadows",
+      "output_name": "style_shoujo_sparkle_style_prompt_sdxl_t1",
+      "guidance_scale": 0.0,
+      "num_inference_steps": 4,
+      "metadata": {
+        "suite": "style_fidelity",
+        "style_target": "shoujo_aesthetic",
+        "condition": "style_prompt",
+        "trial_index": 1,
+        "trial_seed": 137,
+        "backbone": "sdxl_turbo",
+        "mode": "cached_local_model"
+      }
+    },
+    {
+      "id": "style_seinen_detail",
+      "seed": 1443,
+      "prompt": "A seinen manga panel of a city skyline at dusk with dense architectural detail, intricate building facades, power lines crossing the frame, high detail crosshatch shading, realistic proportions, black and white",
+      "negative_prompt": "color, simple background, cartoon style, chibi, blurry, low detail, 3D render",
+      "output_name": "style_seinen_detail_style_prompt_sdxl_t1",
+      "guidance_scale": 0.0,
+      "num_inference_steps": 4,
+      "metadata": {
+        "suite": "style_fidelity",
+        "style_target": "seinen_architectural",
+        "condition": "style_prompt",
+        "trial_index": 1,
+        "trial_seed": 137,
+        "backbone": "sdxl_turbo",
+        "mode": "cached_local_model"
+      }
+    }
+  ]
+}

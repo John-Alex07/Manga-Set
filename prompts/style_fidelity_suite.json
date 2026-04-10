@@ -1,0 +1,80 @@
+[
+  {
+    "id": "style_screentone_gradient",
+    "prompt": "A black-and-white manga panel of a lone figure standing on a hilltop, heavy screentone gradient from dark foreground to light sky, no color, clean inking, classic manga shading technique",
+    "negative_prompt": "color, photorealistic, blurry, watercolor, oil painting, 3D render",
+    "controls": {
+      "shot_type": "wide shot",
+      "camera_angle": "low angle"
+    },
+    "metadata": {
+      "suite": "style_fidelity",
+      "style_target": "screentone_gradient"
+    }
+  },
+  {
+    "id": "style_speed_lines",
+    "prompt": "A manga action panel with a character punching forward, radiating speed lines emanating from the impact point, high contrast black and white, bold inking, no screentone, pure line art action",
+    "negative_prompt": "color, soft shading, photorealistic, blurry, watercolor, 3D render",
+    "controls": {
+      "shot_type": "close-up action",
+      "camera_angle": "frontal"
+    },
+    "metadata": {
+      "suite": "style_fidelity",
+      "style_target": "speed_lines"
+    }
+  },
+  {
+    "id": "style_chibi_emotion",
+    "prompt": "A manga panel in chibi style showing a small character with oversized head, simplified body, exaggerated angry expression with cross-shaped vein mark, black-and-white line art, comedic tone",
+    "negative_prompt": "realistic proportions, color, photorealistic, detailed anatomy, 3D render",
+    "controls": {
+      "shot_type": "character focus",
+      "camera_angle": "frontal"
+    },
+    "metadata": {
+      "suite": "style_fidelity",
+      "style_target": "chibi_expression"
+    }
+  },
+  {
+    "id": "style_dramatic_shadow",
+    "prompt": "A noir-style manga panel of a detective in a trench coat standing under a single streetlight, heavy black shadows covering half the face, stark contrast, minimal screentone, heavy inking style",
+    "negative_prompt": "color, bright lighting, flat shading, photorealistic, soft edges, 3D render",
+    "controls": {
+      "shot_type": "medium shot",
+      "camera_angle": "slightly low angle"
+    },
+    "metadata": {
+      "suite": "style_fidelity",
+      "style_target": "noir_shadow"
+    }
+  },
+  {
+    "id": "style_shoujo_sparkle",
+    "prompt": "A shoujo manga panel of a girl looking up at cherry blossom petals falling, soft flowing hair, large expressive eyes with highlight reflections, delicate thin line art, floral screentone pattern in background",
+    "negative_prompt": "color, heavy inking, masculine style, photorealistic, 3D render, harsh shadows",
+    "controls": {
+      "shot_type": "close-up",
+      "camera_angle": "slightly low angle"
+    },
+    "metadata": {
+      "suite": "style_fidelity",
+      "style_target": "shoujo_aesthetic"
+    }
+  },
+  {
+    "id": "style_seinen_detail",
+    "prompt": "A seinen manga panel of a city skyline at dusk with dense architectural detail, intricate building facades, power lines crossing the frame, high detail crosshatch shading, realistic proportions, black and white",
+    "negative_prompt": "color, simple background, cartoon style, chibi, blurry, low detail, 3D render",
+    "controls": {
+      "shot_type": "extreme wide shot",
+      "camera_angle": "elevated"
+    },
+    "metadata": {
+      "suite": "style_fidelity",
+      "style_target": "seinen_architectural"
+    }
+  }
+]

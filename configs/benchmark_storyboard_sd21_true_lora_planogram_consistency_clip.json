@@ -1,0 +1,107 @@
+{
+  "name": "benchmark_storyboard_sd21_true_lora_planogram_consistency_clip",
+  "description": "Cached SD 2.1 consistency subset with the planogram LoRA and CLIP alignment scoring.",
+  "seed": 42,
+  "output_dir": "outputs",
+  "model": {
+    "backend": "diffusers",
+    "model_id": "/tmp/manga-models/sd21-base-precise",
+    "device": "cpu",
+    "dtype": "float32",
+    "params": {
+      "use_safetensors": true,
+      "scheduler": "euler",
+      "local_files_only": false,
+      "disable_safety_checker": true
+    }
+  },
+  "adapters": [
+    {
+      "type": "lora",
+      "enabled": true,
+      "weight": 1.0,
+      "params": {
+        "weights_path": "/tmp/manga-loras/planogram-sd21/pytorch_lora_weights.bin",
+        "adapter_name": "planogram_sd21_lora",
+        "adapter_scale": 0.8
+      }
+    }
+  ],
+  "evaluation": {
+    "metrics": [
+      "file_integrity",
+      "image_statistics",
+      "latency",
+      "clip_text_alignment"
+    ],
+    "params": {
+      "clip_text_alignment": {
+        "model_id": "openai/clip-vit-base-patch32",
+        "device": "cpu",
+        "local_files_only": false
+      }
+    }
+  },
+  "prompts": [
+    {
+      "id": "consistency_hiro_panel_1",
+      "seed": 1003,
+      "prompt": "Manga close-up of Hiro, a 16-year-old boy with messy dark hair, a small cut on his left cheek, school uniform collar open, determined expression, black-and-white screentone shading",
+      "negative_prompt": "different hair color, different scar position, blurry eyes, malformed face",
+      "output_name": "consistency_hiro_panel_1_sd21_true_lora_planogram_consistency",
+      "guidance_scale": 6.0,
+      "num_inference_steps": 4,
+      "metadata": {
+        "suite": "consistency",
+        "baseline": "sd21_true_lora_planogram_consistency",
+        "mode": "cached_local_model",
+        "character_group": "hiro"
+      }
+    },
+    {
+      "id": "consistency_hiro_panel_2",
+      "seed": 1004,
+      "prompt": "Manga medium shot of Hiro, same messy dark hair and cut on his left cheek, turning toward a sound in a dark corridor, tense posture, dramatic inking and consistent facial identity",
+      "negative_prompt": "new character design, different scar position, extra limbs, blurry face",
+      "output_name": "consistency_hiro_panel_2_sd21_true_lora_planogram_consistency",
+      "guidance_scale": 6.0,
+      "num_inference_steps": 4,
+      "metadata": {
+        "suite": "consistency",
+        "baseline": "sd21_true_lora_planogram_consistency",
+        "mode": "cached_local_model",
+        "character_group": "hiro"
+      }
+    },
+    {
+      "id": "consistency_akira_panel_1",
+      "seed": 1006,
+      "prompt": "Manga close-up of Akira, a tall teenage rival with spiked hair, sharp eyes, leather jacket, confident smirk, staff resting over one shoulder, dramatic black-and-white screentone shading",
+      "negative_prompt": "soft expression, wrong hairstyle, blurry eyes, malformed face",
+      "output_name": "consistency_akira_panel_1_sd21_true_lora_planogram_consistency",
+      "guidance_scale": 6.0,
+      "num_inference_steps": 4,
+      "metadata": {
+        "suite": "consistency",
+        "baseline": "sd21_true_lora_planogram_consistency",
+        "mode": "cached_local_model",
+        "character_group": "akira"
+      }
+    },
+    {
+      "id": "consistency_akira_panel_2",
+      "seed": 1007,
+      "prompt": "Manga medium shot of Akira, same spiked hair and leather jacket, standing near a rooftop fence at sunset with a wooden staff in hand, confident expression, consistent identity and dramatic inking",
+      "negative_prompt": "different hairstyle, soft smile, missing staff, blurred face",
+      "output_name": "consistency_akira_panel_2_sd21_true_lora_planogram_consistency",
+      "guidance_scale": 6.0,
+      "num_inference_steps": 4,
+      "metadata": {
+        "suite": "consistency",
+        "baseline": "sd21_true_lora_planogram_consistency",
+        "mode": "cached_local_model",
+        "character_group": "akira"
+      }
+    }
+  ]
+}

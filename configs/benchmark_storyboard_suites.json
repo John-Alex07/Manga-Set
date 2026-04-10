@@ -1,0 +1,56 @@
+{
+  "name": "benchmark_storyboard_suites",
+  "description": "Benchmark run assembled from reusable prompt suites for alignment, consistency, and story sequencing.",
+  "seed": 500,
+  "output_dir": "outputs",
+  "prompt_sources": [
+    "../prompts/alignment_suite.json",
+    "../prompts/consistency_suite.json",
+    "../prompts/panel_story_suite.json"
+  ],
+  "model": {
+    "backend": "mock",
+    "model_id": "mock-storyboard-backend",
+    "device": "cpu",
+    "dtype": "float32",
+    "params": {
+      "image_size": [768, 768]
+    }
+  },
+  "adapters": [
+    {
+      "type": "style_prompt",
+      "enabled": true,
+      "weight": 0.8,
+      "params": {
+        "style_prompt": "black and white manga screentone, cinematic line art"
+      }
+    },
+    {
+      "type": "controlnet",
+      "enabled": true,
+      "weight": 1.0,
+      "params": {
+        "prompt_hint": "readable panel composition, clear silhouette separation",
+        "controls": {
+          "consistency_goal": "panel coherence"
+        }
+      }
+    }
+  ],
+  "refinement": {
+    "type": "flux",
+    "enabled": true,
+    "params": {
+      "save_copy": true
+    }
+  },
+  "evaluation": {
+    "metrics": [
+      "file_integrity",
+      "image_statistics",
+      "histogram_consistency",
+      "latency"
+    ]
+  }
+}

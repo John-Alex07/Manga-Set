@@ -1,0 +1,50 @@
+{
+  "name": "benchmark_storyboard_sd21_single",
+  "description": "Single-prompt real baseline run using a prefetched Stable Diffusion 2.1 base model on CPU.",
+  "seed": 920,
+  "output_dir": "outputs",
+  "model": {
+    "backend": "diffusers",
+    "model_id": "/tmp/manga-models/sd21-base-precise",
+    "device": "cpu",
+    "dtype": "float32",
+    "params": {
+      "use_safetensors": true,
+      "scheduler": "euler",
+      "local_files_only": false,
+      "disable_safety_checker": true
+    }
+  },
+  "adapters": [
+    {
+      "type": "style_prompt",
+      "enabled": true,
+      "weight": 0.8,
+      "params": {
+        "style_prompt": "black and white manga screentone, cinematic line art"
+      }
+    }
+  ],
+  "evaluation": {
+    "metrics": [
+      "file_integrity",
+      "image_statistics",
+      "latency"
+    ]
+  },
+  "prompts": [
+    {
+      "id": "align_rooftop_duel",
+      "prompt": "A black-and-white manga panel showing two teenagers facing each other on a windy rooftop at sunset, one holding a wooden staff and the other in a defensive stance, dramatic shadows and strong screentone shading",
+      "negative_prompt": "blurry, low contrast, malformed hands, duplicate limbs",
+      "output_name": "align_rooftop_duel_sd21_single",
+      "guidance_scale": 6.0,
+      "num_inference_steps": 4,
+      "metadata": {
+        "suite": "alignment",
+        "baseline": "sd21_cpu_single",
+        "mode": "cached_local_model"
+      }
+    }
+  ]
+}
